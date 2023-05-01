@@ -1,0 +1,33 @@
+{
+  "name": "stocks-content-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "stocks-content-generator",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.13",
+    "aws": "^0.0.3-2",
+    "aws-sdk": "^2.1344.0",
+    "axios": "^1.3.4",
+    "dotenv": "^16.0.3",
+    "gatsby": "^5.7.0",
+    "gatsby-plugin-sass": "^6.9.0",
+    "gatsby-source-dynamodb": "^0.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-preloader-icon": "^1.0.0",
+    "sass": "^1.62.1",
+    "uuid": "^9.0.0"
+  }
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+// Variables
+
+// Fonts
+$poppins: 'Poppins', sans-serif;
+$smooch-sans: 'Smooch Sans', sans-serif;
+$rajdhani: 'Rajdhani', sans-serif;
+
+
+// Colours
+$primary-colour: #17b8c7;
+$dark-primary-colour: #148e99;
+$darker-primary-colour: #116d75;
+$light-primary-colour: #45C6D2;
+$lighter-primary-colour: #85c6cc;
+$secondary-colour: #bc60ce;
+$light-green: #98c752;
+$grey: #666666;
+$form-text-colour: #726f6f;
+$off-white: #f9f1f1;
+$light-grey: #c0c5ce;
+$success: #4caf50;
+$error: #f44336;
+$light-error: #ffe0e0;
+$orange: #ff9f00;
+$greyed-out: #a5a5a5;
+
+
+// Global
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 0;
+}
+
+body {
+    font-family: $poppins;
+    background-color: $off-white;
+}
+
+img {
+    padding: 0;
+    margin: 0;
+}
+
+// Layout
+.container {
+    margin: 0 auto;
+    max-width: 1350px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 7.2rem);
+}
+
+.content {
+    flex-grow: 1;
+    min-height: 100% !important;
+}
