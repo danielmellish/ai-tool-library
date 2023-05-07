@@ -1,23 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
 // Variables
 
 // Fonts
-$poppins: 'Poppins', sans-serif;
-$smooch-sans: 'Smooch Sans', sans-serif;
-$rajdhani: 'Rajdhani', sans-serif;
+$montserrat: 'Montserrat', sans-serif;
 
 
 // Colours
-$primary-colour: #17b8c7;
-$dark-primary-colour: #148e99;
-$darker-primary-colour: #116d75;
-$light-primary-colour: #45C6D2;
-$lighter-primary-colour: #85c6cc;
-$secondary-colour: #bc60ce;
-$light-green: #98c752;
+$primary-colour: #05445E;
+$secondary-colour: #189AB4;
+$tertiary-colour: #75E6DA;
+$fourth-colour: #D4F1F4;
 $grey: #666666;
-$form-text-colour: #726f6f;
 $off-white: #f9f1f1;
 $light-grey: #c0c5ce;
 $success: #4caf50;
@@ -35,13 +29,26 @@ $greyed-out: #a5a5a5;
 }
 
 body {
-    font-family: $poppins;
+    font-family: $montserrat;
     background-color: $off-white;
 }
 
 img {
     padding: 0;
     margin: 0;
+    width: 100%;
+}
+
+ul {
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+p {
+    margin: 10px 0
 }
 
 // Layout
@@ -57,4 +64,95 @@ img {
 .content {
     flex-grow: 1;
     min-height: 100% !important;
+}
+
+// Header
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary-colour;
+}
+
+.navList {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.navItem {
+    padding: 1rem 1rem;
+    margin: 0 1rem;
+    color: $off-white;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+}
+
+.navLogoItem {
+    padding: 1rem 1.5rem;
+    color: $off-white;
+}
+
+.navItemText:hover {
+    padding-bottom: 3px;
+    border-bottom: $tertiary-colour solid 3px;
+    cursor: pointer;
+}
+
+.activeNavItem {
+    .navItemText{
+        border-bottom: $tertiary-colour solid 3px;
+        padding-bottom: 3px;
+    }
+}
+
+// Tool pages
+.toolHeader {
+    margin: 1rem 0;
+}
+
+.toolSubHeader {
+    margin: 1rem 0;
+}
+
+.toolTextField {
+    margin-bottom: 1rem;
+}
+
+.toolSubmitButtonContainer {
+    float: right;
+    margin-top: 1rem;
+}
+
+.toolLoadingContainer {
+    height: 80vh;
+}
+
+.toolLoadingAnimation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.toolLoadingText {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: $primary-colour;
+}
+
+.toolLoadingBarContainer {
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 40%;
+}
+
+.toolResetButtonContainer {
+    float: right;
+    margin-top: 1rem;
 }

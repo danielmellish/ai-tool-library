@@ -1,8 +1,10 @@
 import * as React from "react"
 import {Button, TextField} from '@mui/material'
-import { Preloader, Grid } from 'react-preloader-icon';
 import { v4 as uuidv4 } from 'uuid'
 import Layout from '../components/Layout'
+import LoadingIcons from 'react-loading-icons'
+import *  as globalStyles from '../styles/global.module.scss'
+import LoadingBar from '../components/LoadingBar'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -124,49 +126,53 @@ class IndexPage extends React.Component {
                   variant="outlined" 
                   value={this.state.formData.email}
                   fullWidth
-                />
-                <br/>
-                <br/> */}
+                  className={globalStyles.toolTextField}
+                />*/}
+                <h1 className={globalStyles.toolHeader}>Newsletter Generator</h1>
+                <h3 className={globalStyles.toolSubHeader}>Insert your news release into the field below. We'll generate a newsletter for you.</h3>
                 <TextField 
                   onChange={this.handleChange} 
                   name="text" 
-                  label="Text to convert" 
+                  label="Enter the news release here" 
                   variant="outlined" 
                   multiline
                   rows={20}
                   value={this.state.formData.text}
                   fullWidth
+                  className={globalStyles.toolTextField}
                 />
-                <br/>
-                <br/>
+                <div className={globalStyles.toolSubmitButtonContainer}>
+                  <Button 
+                    variant="contained" 
+                    onClick={this.handleAPI}
+                    disabled={this.state.submitted}>
+                    Generate newsletter
+                  </Button>
+                </div>
               </div>}
               {this.state.submitted && !this.state.resultReceived &&
-              <div>
-                <Preloader
-                use={Grid}
-                size={60}
-                strokeWidth={6}
-                strokeColor="#262626"
-                duration={2000}
+              <div className={globalStyles.toolLoadingContainer}>
+                <LoadingIcons.Bars 
+                stroke = '#189AB4'
+                fill="#189AB4"
+                className={globalStyles.toolLoadingAnimation}
                 />
-                <br />
+                <p className={globalStyles.toolLoadingText}>Generating your newsletter</p>
+                <div className={globalStyles.toolLoadingBarContainer}>
+                  <LoadingBar />
+                </div>
               </div>}
               {this.state.submitted && this.state.resultReceived &&
               <div dangerouslySetInnerHTML={{__html: this.state.convertedText}} />
               }
-              {!this.state.resultReceived &&
-              <Button 
-                variant="contained" 
-                onClick={this.handleAPI}
-                disabled={this.state.submitted}>
-                Generate
-              </Button>}
               {this.state.resultReceived &&
-              <Button 
-                variant="contained" 
-                onClick={this.handleReset}>
-                Reset
-              </Button>}
+              <div className={globalStyles.toolResetButtonContainer}>
+                  <Button 
+                  variant="contained" 
+                  onClick={this.handleReset}>
+                  Reset
+              </Button>
+              </div>}
             </Layout>
           </div>
       )
